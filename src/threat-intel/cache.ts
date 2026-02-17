@@ -7,7 +7,7 @@ import type { CachedThreatEntry, ThreatCheckResult, ThreatFeedEntry } from './ty
  * Local file-based cache for threat intelligence lookups.
  *
  * Stores check results and feed entries at:
- *   ~/.calguard/cache/threat-intel.json
+ *   ~/.gatekeep/cache/threat-intel.json
  *
  * Entries are TTL-based and automatically pruned on read.
  */
@@ -19,7 +19,7 @@ export class ThreatIntelCache {
   private loaded: boolean;
 
   constructor(options?: { cacheDir?: string; cacheTtlHours?: number }) {
-    this.cacheDir = options?.cacheDir ?? path.join(os.homedir(), '.calguard', 'cache');
+    this.cacheDir = options?.cacheDir ?? path.join(os.homedir(), '.gatekeep', 'cache');
     this.cacheFile = path.join(this.cacheDir, 'threat-intel.json');
     this.cacheTtlMs = (options?.cacheTtlHours ?? 24) * 60 * 60 * 1000;
     this.entries = new Map();

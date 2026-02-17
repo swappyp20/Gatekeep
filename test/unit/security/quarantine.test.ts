@@ -8,7 +8,7 @@ import { RiskLevel, SecurityAction } from '../../../src/security/types.js';
 
 /** Create a temporary directory for quarantine tests. */
 function makeTempDir(): string {
-  return fs.mkdtempSync(path.join(os.tmpdir(), 'calguard-quarantine-test-'));
+  return fs.mkdtempSync(path.join(os.tmpdir(), 'gatekeep-quarantine-test-'));
 }
 
 function makeScanResult(overrides: Partial<EventScanResult> = {}): EventScanResult {

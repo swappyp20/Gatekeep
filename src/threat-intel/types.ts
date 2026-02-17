@@ -1,5 +1,5 @@
 /**
- * Types for the CalGuard Cloud Threat Intelligence system.
+ * Types for the Gatekeep Cloud Threat Intelligence system.
  *
  * Privacy-first: only cryptographic fingerprints are exchanged
  * with the cloud service — never raw calendar content.

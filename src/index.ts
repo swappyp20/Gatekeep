@@ -1,4 +1,4 @@
-import { CalGuardServer } from './server.js';
+import { GatekeepServer } from './server.js';
 import { initializeOAuth2Client } from './upstream/auth/client.js';
 import { AuthServer } from './upstream/auth/server.js';
 import type { ServerConfig } from './upstream/config/TransportConfig.js';
@@ -16,12 +16,12 @@ async function main() {
       config.enabledTools = args[enableToolsIdx + 1].split(',');
     }
 
-    const server = new CalGuardServer(config);
+    const server = new GatekeepServer(config);
     await server.initialize();
     await server.start();
   } catch (error: unknown) {
     process.stderr.write(
-      `[CalGuard] Failed to start: ${error instanceof Error ? error.message : error}\n`,
+      `[Gatekeep] Failed to start: ${error instanceof Error ? error.message : error}\n`,
     );
     process.exit(1);
   }
@@ -78,13 +78,13 @@ switch (command) {
     main();
     break;
   case 'version':
-    process.stdout.write('CalGuard-AI v0.1.0\n');
+    process.stdout.write('Gatekeep v0.1.0\n');
     break;
   case 'help':
-    process.stdout.write(`CalGuard-AI v0.1.0 - Calendar Security Proxy for Claude Desktop
+    process.stdout.write(`Gatekeep v0.1.0 - Calendar Security Proxy for Claude Desktop
 
 Usage:
-  calguard-ai [command]
+  gatekeep [command]
 
 Commands:
   auth [account-id]  Run OAuth authentication flow

@@ -27,11 +27,11 @@ export interface QuarantineEntry {
 /**
  * Persistent store for blocked/redacted calendar event content.
  *
- * When CalGuard blocks or redacts an event, the original content
+ * When Gatekeep blocks or redacts an event, the original content
  * is quarantined so administrators can inspect it via the
- * `calguard-view-quarantined` MCP tool.
+ * `gatekeep-view-quarantined` MCP tool.
  *
- * Storage: ~/.calguard/quarantine/<eventId>.json
+ * Storage: ~/.gatekeep/quarantine/<eventId>.json
  * Default TTL: 7 days
  */
 export class QuarantineStore {
@@ -39,7 +39,7 @@ export class QuarantineStore {
   private ttlMs: number;
 
   constructor(options?: { storeDir?: string; ttlDays?: number }) {
-    this.storeDir = options?.storeDir ?? path.join(os.homedir(), '.calguard', 'quarantine');
+    this.storeDir = options?.storeDir ?? path.join(os.homedir(), '.gatekeep', 'quarantine');
     this.ttlMs = (options?.ttlDays ?? 7) * 24 * 60 * 60 * 1000;
   }
 

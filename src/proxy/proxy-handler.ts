@@ -20,7 +20,7 @@ const SCANNABLE_TOOLS = new Set([
 
 /**
  * Intercepts MCP tool responses from the upstream google-calendar-mcp
- * to run all event data through the CalGuard sanitization engine.
+ * to run all event data through the Gatekeep sanitization engine.
  */
 export class ProxyHandler {
   private engine: SanitizationEngine;

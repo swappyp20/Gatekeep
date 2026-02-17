@@ -6,7 +6,7 @@ import { ThreatIntelClient } from '../../../src/threat-intel/client.js';
 import type { ThreatFingerprint } from '../../../src/threat-intel/types.js';
 
 function makeTempDir(): string {
-  return fs.mkdtempSync(path.join(os.tmpdir(), 'calguard-client-test-'));
+  return fs.mkdtempSync(path.join(os.tmpdir(), 'gatekeep-client-test-'));
 }
 
 describe('ThreatIntelClient', () => {

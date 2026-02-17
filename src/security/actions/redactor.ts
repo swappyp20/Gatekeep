@@ -12,7 +12,7 @@ export class ContentRedactor {
   redact(originalContent: string, scanResult: FieldScanResult): string {
     switch (scanResult.action) {
       case SecurityAction.BLOCK:
-        return `[CALGUARD: Content blocked — ${scanResult.detections.length} threat(s) detected. Use calguard-view-quarantined to inspect.]`;
+        return `[GATEKEEP: Content blocked — ${scanResult.detections.length} threat(s) detected. Use gatekeep-view-quarantined to inspect.]`;
 
       case SecurityAction.REDACT:
         return this.redactDangerousContent(originalContent, scanResult);

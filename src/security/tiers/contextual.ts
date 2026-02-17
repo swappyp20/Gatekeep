@@ -389,7 +389,7 @@ export class ContextualAnalyzer implements DetectionTier {
       { pattern: /\bpip\s+install\s+(?:--user\s+)?(?!-r\b)\S+/gi, name: 'pip install', severity: 0.60 },
       { pattern: /\bnpm\s+install\s+(?:-g\s+)\S+/gi, name: 'npm install -g', severity: 0.65 },
       { pattern: /\bnpm\s+install\s+(?!-[dD])\S+/gi, name: 'npm install package', severity: 0.55 },
-      { pattern: /\bnpx\s+(?!-y\s+calguard)\S+/gi, name: 'npx execution', severity: 0.60 },
+      { pattern: /\bnpx\s+(?!-y\s+gatekeep)\S+/gi, name: 'npx execution', severity: 0.60 },
       { pattern: /\biex\s*\(\s*(?:new-object|invoke-webrequest|iwr)\b/gi, name: 'PowerShell IEX', severity: 0.90 },
       { pattern: /\bInvoke-(?:Expression|WebRequest|RestMethod)\b/gi, name: 'PowerShell Invoke', severity: 0.80 },
       { pattern: /\bimport\s+(?:os|subprocess|sys|shutil|ctypes)\b/gi, name: 'Python system import', severity: 0.65 },

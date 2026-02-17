@@ -25,13 +25,13 @@ export interface ThreatIntelClientConfig {
 }
 
 const DEFAULT_CONFIG: ThreatIntelClientConfig = {
-  apiUrl: 'https://api.calguard.dev/v1',
+  apiUrl: 'https://api.gatekeep.dev/v1',
   enabled: false,
   syncIntervalMinutes: 15,
 };
 
 /**
- * Client for the CalGuard Cloud Threat Intelligence service.
+ * Client for the Gatekeep Cloud Threat Intelligence service.
  *
  * Privacy-first: only SHA-256 fingerprints are sent to the cloud.
  * Never raw calendar content.
@@ -52,7 +52,7 @@ export class ThreatIntelClient {
 
   constructor(config?: Partial<ThreatIntelClientConfig>) {
     this.config = { ...DEFAULT_CONFIG, ...config };
-    this.stateDir = this.config.stateDir ?? path.join(os.homedir(), '.calguard');
+    this.stateDir = this.config.stateDir ?? path.join(os.homedir(), '.gatekeep');
     this.cache = new ThreatIntelCache({
       cacheDir: path.join(this.stateDir, 'cache'),
       cacheTtlHours: this.config.cacheTtlHours,

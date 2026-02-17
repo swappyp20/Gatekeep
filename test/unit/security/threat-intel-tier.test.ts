@@ -6,7 +6,7 @@ import { ThreatIntelTier } from '../../../src/security/tiers/threat-intel.js';
 import type { ScanContext } from '../../../src/security/types.js';
 
 function makeTempDir(): string {
-  return fs.mkdtempSync(path.join(os.tmpdir(), 'calguard-tier-test-'));
+  return fs.mkdtempSync(path.join(os.tmpdir(), 'gatekeep-tier-test-'));
 }
 
 const defaultContext: ScanContext = {

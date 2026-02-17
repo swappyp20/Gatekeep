@@ -1,5 +1,5 @@
 /**
- * Core security type definitions for CalGuard-AI.
+ * Core security type definitions for Gatekeep.
  */
 
 export enum RiskLevel {

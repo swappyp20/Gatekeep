@@ -1,8 +1,8 @@
 /**
- * CalGuard Cloud Threat Intelligence API
+ * Gatekeep Cloud Threat Intelligence API
  *
  * Cloudflare Worker that serves as a community-fed threat database
- * for CalGuard instances. Only processes SHA-256 fingerprints —
+ * for Gatekeep instances. Only processes SHA-256 fingerprints —
  * never raw calendar content.
  *
  * Endpoints:

@@ -1,11 +1,11 @@
 {
-  "name": "calguard-ai",
+  "name": "gatekeep",
   "version": "0.1.0",
   "description": "MCP security proxy protecting Claude Desktop from calendar-based prompt injection attacks",
   "type": "module",
   "main": "build/index.js",
   "bin": {
-    "calguard-ai": "build/index.js"
+    "gatekeep": "build/index.js"
   },
   "files": [
     "build/",
@@ -18,11 +18,11 @@
     "security",
     "prompt-injection",
     "google-calendar",
-    "calguard"
+    "gatekeep"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/swappyp20/CalGuard-AI.git"
+    "url": "git+https://github.com/swappyp20/Gatekeep.git"
   },
   "author": "swappyp20",
   "license": "Apache-2.0",

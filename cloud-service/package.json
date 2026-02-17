@@ -1,7 +1,7 @@
 {
-  "name": "calguard-threat-intel-api",
+  "name": "gatekeep-threat-intel-api",
   "version": "0.1.0",
-  "description": "CalGuard Cloud Threat Intelligence API (Cloudflare Worker)",
+  "description": "Gatekeep Cloud Threat Intelligence API (Cloudflare Worker)",
   "type": "module",
   "scripts": {
     "dev": "wrangler dev",

@@ -15,7 +15,7 @@ import {
   SECURITY_LIMITS,
 } from './types.js';
 
-/** A calendar event in the shape CalGuard expects. */
+/** A calendar event in the shape Gatekeep expects. */
 export interface CalendarEvent {
   id: string;
   calendarId?: string;

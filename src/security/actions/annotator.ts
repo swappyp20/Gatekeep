@@ -22,7 +22,7 @@ export class SecurityAnnotator {
     if (flagged.length === 0) return null;
 
     const lines: string[] = [
-      '[CALGUARD SECURITY NOTICE]',
+      '[GATEKEEP SECURITY NOTICE]',
       `${flagged.length} event(s) flagged for potential security risks.`,
       '',
     ];
@@ -60,7 +60,7 @@ export class SecurityAnnotator {
           "  NOTE: This event's content has been blocked entirely.",
         );
         lines.push(
-          '  Use calguard-view-quarantined tool to inspect if needed.',
+          '  Use gatekeep-view-quarantined tool to inspect if needed.',
         );
       }
 

@@ -1,10 +1,10 @@
-import type { CalGuardConfig } from './schema.js';
+import type { GatekeepConfig } from './schema.js';
 
 /**
- * Default CalGuard configuration values.
+ * Default Gatekeep configuration values.
  * Used as fallbacks when environment variables or config file are absent.
  */
-export const DEFAULT_CONFIG: CalGuardConfig = {
+export const DEFAULT_CONFIG: GatekeepConfig = {
   googleClientId: '',
   googleClientSecret: '',
   readOnly: true,
@@ -15,7 +15,7 @@ export const DEFAULT_CONFIG: CalGuardConfig = {
   },
   threatIntel: {
     enabled: false,
-    apiUrl: 'https://api.calguard.dev/v1',
+    apiUrl: 'https://api.gatekeep.dev/v1',
     syncIntervalMinutes: 15,
   },
   audit: {

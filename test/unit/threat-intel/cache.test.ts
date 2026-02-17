@@ -6,7 +6,7 @@ import { ThreatIntelCache } from '../../../src/threat-intel/cache.js';
 import type { ThreatFeedEntry } from '../../../src/threat-intel/types.js';
 
 function makeTempDir(): string {
-  return fs.mkdtempSync(path.join(os.tmpdir(), 'calguard-cache-test-'));
+  return fs.mkdtempSync(path.join(os.tmpdir(), 'gatekeep-cache-test-'));
 }
 
 describe('ThreatIntelCache', () => {

@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "description": "Known attack payloads for CalGuard-AI detection testing",
+    "description": "Known attack payloads for Gatekeep detection testing",
     "version": "1.0.0",
     "categories": [
       "instruction-override",

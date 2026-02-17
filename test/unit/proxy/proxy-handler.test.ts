@@ -37,7 +37,7 @@ describe('ProxyHandler', () => {
       const result = await proxied(new ListEventsHandler(), {});
 
       const text = result.content[0].text;
-      expect(text).not.toContain('CALGUARD SECURITY NOTICE');
+      expect(text).not.toContain('GATEKEEP SECURITY NOTICE');
       const parsed = JSON.parse(text);
       expect(parsed[0].summary).toBe('Team standup');
     });
@@ -55,7 +55,7 @@ describe('ProxyHandler', () => {
       const result = await proxied(new ListEventsHandler(), {});
 
       const text = result.content[0].text;
-      expect(text).toContain('CALGUARD SECURITY NOTICE');
+      expect(text).toContain('GATEKEEP SECURITY NOTICE');
     });
 
     it('skips scanning for non-scannable tools', async () => {
@@ -71,7 +71,7 @@ describe('ProxyHandler', () => {
       const result = await proxied(new GetCurrentTimeHandler(), {});
 
       const text = result.content[0].text;
-      expect(text).not.toContain('CALGUARD SECURITY NOTICE');
+      expect(text).not.toContain('GATEKEEP SECURITY NOTICE');
     });
 
     it('handles single event responses (get-event)', async () => {
@@ -89,7 +89,7 @@ describe('ProxyHandler', () => {
       const result = await proxied(new GetEventHandler(), {});
 
       const text = result.content[0].text;
-      expect(text).toContain('CALGUARD SECURITY NOTICE');
+      expect(text).toContain('GATEKEEP SECURITY NOTICE');
     });
 
     it('passes through non-JSON responses', async () => {
@@ -113,7 +113,7 @@ describe('ProxyHandler', () => {
       const result = await proxied(new ListEventsHandler(), {});
 
       const text = result.content[0].text;
-      expect(text).toContain('CALGUARD SECURITY NOTICE');
+      expect(text).toContain('GATEKEEP SECURITY NOTICE');
       // The clean event should still be present
       expect(text).toContain('Regular meeting');
     });

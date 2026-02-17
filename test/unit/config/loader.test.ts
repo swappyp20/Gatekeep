@@ -12,7 +12,7 @@ describe('loadConfig', () => {
     process.env.GOOGLE_CLIENT_ID = 'test-client-id';
     process.env.GOOGLE_CLIENT_SECRET = 'test-client-secret';
     // Prevent loading user's actual config file
-    process.env.CALGUARD_CONFIG = '/nonexistent/config.json';
+    process.env.GATEKEEP_CONFIG = '/nonexistent/config.json';
   });
 
   afterEach(() => {
@@ -31,16 +31,16 @@ describe('loadConfig', () => {
     expect(config.logLevel).toBe('info');
   });
 
-  it('reads CALGUARD_READ_ONLY env var', () => {
-    process.env.CALGUARD_READ_ONLY = 'false';
+  it('reads GATEKEEP_READ_ONLY env var', () => {
+    process.env.GATEKEEP_READ_ONLY = 'false';
     const config = loadConfig();
     expect(config.readOnly).toBe(false);
   });
 
   it('reads risk threshold env vars', () => {
-    process.env.CALGUARD_RISK_THRESHOLD_SUSPICIOUS = '0.20';
-    process.env.CALGUARD_RISK_THRESHOLD_DANGEROUS = '0.50';
-    process.env.CALGUARD_RISK_THRESHOLD_CRITICAL = '0.80';
+    process.env.GATEKEEP_RISK_THRESHOLD_SUSPICIOUS = '0.20';
+    process.env.GATEKEEP_RISK_THRESHOLD_DANGEROUS = '0.50';
+    process.env.GATEKEEP_RISK_THRESHOLD_CRITICAL = '0.80';
     const config = loadConfig();
     expect(config.thresholds.suspicious).toBe(0.20);
     expect(config.thresholds.dangerous).toBe(0.50);
@@ -48,33 +48,33 @@ describe('loadConfig', () => {
   });
 
   it('reads threat intel env vars', () => {
-    process.env.CALGUARD_THREAT_INTEL = 'true';
-    process.env.CALGUARD_THREAT_INTEL_URL = 'https://custom.api.com/v1';
+    process.env.GATEKEEP_THREAT_INTEL = 'true';
+    process.env.GATEKEEP_THREAT_INTEL_URL = 'https://custom.api.com/v1';
     const config = loadConfig();
     expect(config.threatIntel.enabled).toBe(true);
     expect(config.threatIntel.apiUrl).toBe('https://custom.api.com/v1');
   });
 
   it('reads audit env vars', () => {
-    process.env.CALGUARD_AUDIT_ENABLED = 'false';
+    process.env.GATEKEEP_AUDIT_ENABLED = 'false';
     const config = loadConfig();
     expect(config.audit.enabled).toBe(false);
   });
 
   it('reads log level env var', () => {
-    process.env.CALGUARD_LOG_LEVEL = 'debug';
+    process.env.GATEKEEP_LOG_LEVEL = 'debug';
     const config = loadConfig();
     expect(config.logLevel).toBe('debug');
   });
 
   it('reads quarantine env vars', () => {
-    process.env.CALGUARD_QUARANTINE_TTL_DAYS = '14';
+    process.env.GATEKEEP_QUARANTINE_TTL_DAYS = '14';
     const config = loadConfig();
     expect(config.quarantine.ttlDays).toBe(14);
   });
 
   it('loads from config file', () => {
-    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'calguard-config-test-'));
+    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'gatekeep-config-test-'));
     const configFile = path.join(tmpDir, 'config.json');
 
     fs.writeFileSync(configFile, JSON.stringify({
@@ -84,7 +84,7 @@ describe('loadConfig', () => {
       logLevel: 'warn',
     }));
 
-    process.env.CALGUARD_CONFIG = configFile;
+    process.env.GATEKEEP_CONFIG = configFile;
     // Remove env overrides to test file loading
     delete process.env.GOOGLE_CLIENT_ID;
     delete process.env.GOOGLE_CLIENT_SECRET;
@@ -98,7 +98,7 @@ describe('loadConfig', () => {
   });
 
   it('env vars override config file values', () => {
-    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'calguard-config-test-'));
+    const tmpDir = fs.mkdtempSync(path.join(os.tmpdir(), 'gatekeep-config-test-'));
     const configFile = path.join(tmpDir, 'config.json');
 
     fs.writeFileSync(configFile, JSON.stringify({
@@ -107,8 +107,8 @@ describe('loadConfig', () => {
       logLevel: 'warn',
     }));
 
-    process.env.CALGUARD_CONFIG = configFile;
-    process.env.CALGUARD_LOG_LEVEL = 'error';
+    process.env.GATEKEEP_CONFIG = configFile;
+    process.env.GATEKEEP_LOG_LEVEL = 'error';
 
     const config = loadConfig();
     expect(config.logLevel).toBe('error'); // env wins

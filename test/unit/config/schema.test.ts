@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { CalGuardConfigSchema } from '../../../src/config/schema.js';
+import { GatekeepConfigSchema } from '../../../src/config/schema.js';
 
-describe('CalGuardConfigSchema', () => {
+describe('GatekeepConfigSchema', () => {
   it('accepts minimal valid config', () => {
-    const result = CalGuardConfigSchema.safeParse({
+    const result = GatekeepConfigSchema.safeParse({
       googleClientId: 'test-client-id',
       googleClientSecret: 'test-client-secret',
     });
@@ -21,7 +21,7 @@ describe('CalGuardConfigSchema', () => {
   });
 
   it('accepts full config with all fields', () => {
-    const result = CalGuardConfigSchema.safeParse({
+    const result = GatekeepConfigSchema.safeParse({
       googleClientId: 'client-id',
       googleClientSecret: 'client-secret',
       readOnly: false,
@@ -47,7 +47,7 @@ describe('CalGuardConfigSchema', () => {
   });
 
   it('rejects empty googleClientId', () => {
-    const result = CalGuardConfigSchema.safeParse({
+    const result = GatekeepConfigSchema.safeParse({
       googleClientId: '',
       googleClientSecret: 'secret',
     });
@@ -55,7 +55,7 @@ describe('CalGuardConfigSchema', () => {
   });
 
   it('rejects thresholds out of order', () => {
-    const result = CalGuardConfigSchema.safeParse({
+    const result = GatekeepConfigSchema.safeParse({
       googleClientId: 'id',
       googleClientSecret: 'secret',
       thresholds: { suspicious: 0.70, dangerous: 0.50, critical: 0.85 },
@@ -64,7 +64,7 @@ describe('CalGuardConfigSchema', () => {
   });
 
   it('rejects threshold values outside 0-1 range', () => {
-    const result = CalGuardConfigSchema.safeParse({
+    const result = GatekeepConfigSchema.safeParse({
       googleClientId: 'id',
       googleClientSecret: 'secret',
       thresholds: { suspicious: -0.1, dangerous: 0.60, critical: 0.85 },
@@ -73,7 +73,7 @@ describe('CalGuardConfigSchema', () => {
   });
 
   it('rejects invalid log level', () => {
-    const result = CalGuardConfigSchema.safeParse({
+    const result = GatekeepConfigSchema.safeParse({
       googleClientId: 'id',
       googleClientSecret: 'secret',
       logLevel: 'verbose',
@@ -82,7 +82,7 @@ describe('CalGuardConfigSchema', () => {
   });
 
   it('rejects invalid threat intel URL', () => {
-    const result = CalGuardConfigSchema.safeParse({
+    const result = GatekeepConfigSchema.safeParse({
       googleClientId: 'id',
       googleClientSecret: 'secret',
       threatIntel: { enabled: true, apiUrl: 'not-a-url' },
@@ -91,7 +91,7 @@ describe('CalGuardConfigSchema', () => {
   });
 
   it('rejects negative quarantine TTL', () => {
-    const result = CalGuardConfigSchema.safeParse({
+    const result = GatekeepConfigSchema.safeParse({
       googleClientId: 'id',
       googleClientSecret: 'secret',
       quarantine: { ttlDays: -1 },

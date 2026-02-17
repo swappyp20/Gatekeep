@@ -1,10 +1,10 @@
 import { z } from 'zod';
 
 /**
- * Zod schema for CalGuard configuration.
+ * Zod schema for Gatekeep configuration.
  * Used to validate environment variables and config file values.
  */
-export const CalGuardConfigSchema = z.object({
+export const GatekeepConfigSchema = z.object({
   /** Google OAuth */
   googleClientId: z.string().min(1),
   googleClientSecret: z.string().min(1),
@@ -22,7 +22,7 @@ export const CalGuardConfigSchema = z.object({
   /** Cloud threat intelligence. */
   threatIntel: z.object({
     enabled: z.boolean().default(false),
-    apiUrl: z.string().url().default('https://api.calguard.dev/v1'),
+    apiUrl: z.string().url().default('https://api.gatekeep.dev/v1'),
     syncIntervalMinutes: z.number().int().positive().default(15),
   }).default({}),
 
@@ -46,4 +46,4 @@ export const CalGuardConfigSchema = z.object({
   { message: 'Thresholds must be in ascending order: suspicious < dangerous < critical' },
 );
 
-export type CalGuardConfig = z.infer<typeof CalGuardConfigSchema>;
+export type GatekeepConfig = z.infer<typeof GatekeepConfigSchema>;

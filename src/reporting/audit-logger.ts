@@ -4,10 +4,10 @@ import * as os from 'node:os';
 import type { EventScanResult } from '../security/types.js';
 
 /**
- * Structured JSONL audit logger for CalGuard security scans.
+ * Structured JSONL audit logger for Gatekeep security scans.
  *
  * Writes one JSON line per scanned event to:
- *   ~/.calguard/logs/calguard-audit-YYYY-MM-DD.jsonl
+ *   ~/.gatekeep/logs/gatekeep-audit-YYYY-MM-DD.jsonl
  *
  * Each entry records: timestamp, eventId, organizerEmail,
  * riskScore, riskLevel, action taken, detections, and scan duration.
@@ -17,8 +17,8 @@ export class AuditLogger {
   private enabled: boolean;
 
   constructor(options?: { logDir?: string; enabled?: boolean }) {
-    this.logDir = options?.logDir ?? path.join(os.homedir(), '.calguard', 'logs');
-    this.enabled = options?.enabled ?? (process.env.CALGUARD_AUDIT_ENABLED !== 'false');
+    this.logDir = options?.logDir ?? path.join(os.homedir(), '.gatekeep', 'logs');
+    this.enabled = options?.enabled ?? (process.env.GATEKEEP_AUDIT_ENABLED !== 'false');
   }
 
   /**
@@ -73,7 +73,7 @@ export class AuditLogger {
 
   private getLogFilePath(): string {
     const date = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
-    return path.join(this.logDir, `calguard-audit-${date}.jsonl`);
+    return path.join(this.logDir, `gatekeep-audit-${date}.jsonl`);
   }
 
   private async ensureLogDir(): Promise<void> {
