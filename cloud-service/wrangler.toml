@@ -1,0 +1,12 @@
+name = "calguard-threat-intel"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# KV Namespace for storing threat fingerprints
+[[kv_namespaces]]
+binding = "THREAT_STORE"
+id = "placeholder-kv-id"
+
+# Rate limiting
+# [limits]
+# cpu_ms = 50

@@ -1,0 +1,148 @@
+{
+  "_meta": {
+    "description": "Benign calendar event payloads for false positive testing",
+    "version": "1.0.0",
+    "note": "None of these should be flagged (risk level must be SAFE)"
+  },
+  "events": [
+    {
+      "id": "BEN-001",
+      "name": "Basic standup meeting",
+      "summary": "Daily Standup",
+      "description": "Quick sync on sprint progress. Discuss blockers and plan for the day.",
+      "location": "Conference Room A"
+    },
+    {
+      "id": "BEN-002",
+      "name": "Zoom meeting with link",
+      "summary": "Project Kickoff",
+      "description": "Join Zoom Meeting\nhttps://zoom.us/j/98765432100?pwd=abc123def456\nMeeting ID: 987 6543 2100\nPasscode: 123456",
+      "location": "https://zoom.us/j/98765432100"
+    },
+    {
+      "id": "BEN-003",
+      "name": "Technical agenda with CI/CD terms",
+      "summary": "DevOps Weekly Sync",
+      "description": "Agenda:\n1. Review API endpoint changes\n2. Database migration plan\n3. CI/CD pipeline updates\n4. Docker container optimization\n5. Kubernetes deployment strategy",
+      "location": "Engineering Hub"
+    },
+    {
+      "id": "BEN-004",
+      "name": "Google formatted HTML description",
+      "summary": "Team Sync",
+      "description": "<b>Team Sync</b><br>Please review the <a href=\"https://docs.google.com/document/d/1abc123\">design document</a> before the meeting.<br><br><ul><li>Sprint review</li><li>Backlog grooming</li></ul>",
+      "location": "Virtual"
+    },
+    {
+      "id": "BEN-005",
+      "name": "International attendee names",
+      "summary": "Global Team Meeting",
+      "description": "Meeting with Müller, Tanaka (田中), García, and Björk to discuss Q4 planning.",
+      "attendees": [
+        {"displayName": "Hans Müller", "email": "hans@company.com"},
+        {"displayName": "田中太郎", "email": "tanaka@company.com"},
+        {"displayName": "María García", "email": "maria@company.com"},
+        {"displayName": "Erik Björk", "email": "erik@company.com"}
+      ]
+    },
+    {
+      "id": "BEN-006",
+      "name": "Meeting with code review discussion",
+      "summary": "Code Review Session",
+      "description": "Review PR #456: Refactor authentication module\n\nKey changes:\n- Updated user model\n- Added input validation\n- Improved error handling\n- New unit tests for auth flow",
+      "location": "Dev Room 2"
+    },
+    {
+      "id": "BEN-007",
+      "name": "External vendor meeting",
+      "summary": "Vendor Demo: Analytics Platform",
+      "description": "Demo of the new analytics platform from DataCorp.\nContact: sales@datacorp.com\nPlease review their documentation at https://docs.datacorp.com/enterprise",
+      "organizer": {"email": "sales@datacorp.com"}
+    },
+    {
+      "id": "BEN-008",
+      "name": "Security training event",
+      "summary": "Annual Security Awareness Training",
+      "description": "Topics covered:\n- Phishing recognition\n- Password best practices\n- Social engineering awareness\n- Incident reporting procedures\n\nNote: This is mandatory for all employees."
+    },
+    {
+      "id": "BEN-009",
+      "name": "Sprint planning with story points",
+      "summary": "Sprint 42 Planning",
+      "description": "Sprint Goal: Complete user authentication revamp\n\nStories:\n- AUTH-123: Implement OAuth2 flow (8 pts)\n- AUTH-124: Add MFA support (5 pts)\n- AUTH-125: Session management (3 pts)\n- AUTH-126: Rate limiting (2 pts)\n\nVelocity: 28 points / sprint"
+    },
+    {
+      "id": "BEN-010",
+      "name": "All-hands company meeting",
+      "summary": "Q1 All Hands",
+      "description": "Quarterly all-hands meeting.\n\nAgenda:\n- CEO update on company direction\n- Finance review (revenue up 15%)\n- Product roadmap preview\n- Employee recognition awards\n- Q&A session",
+      "location": "Main Auditorium / https://meet.google.com/abc-defg-hij"
+    },
+    {
+      "id": "BEN-011",
+      "name": "Lunch with team",
+      "summary": "Team Lunch @ Sushi Place",
+      "description": "Team lunch to celebrate the successful launch! 🎉\nRestaurant: Tokyo Sushi Bar\nAddress: 123 Main St, Suite 200",
+      "location": "123 Main St, Suite 200"
+    },
+    {
+      "id": "BEN-012",
+      "name": "Interview schedule",
+      "summary": "Interview: Senior Engineer Candidate",
+      "description": "Interview panel:\n- 10:00-10:45 Technical screening (John)\n- 10:45-11:30 System design (Sarah)\n- 11:30-12:00 Culture fit (HR team)\n\nResume and notes in the shared drive.",
+      "attendees": [
+        {"displayName": "John Smith", "email": "john@company.com"},
+        {"displayName": "Sarah Lee", "email": "sarah@company.com"}
+      ]
+    },
+    {
+      "id": "BEN-013",
+      "name": "Microsoft Teams meeting",
+      "summary": "Cross-Team Alignment",
+      "description": "Join on Microsoft Teams:\nhttps://teams.microsoft.com/l/meetup-join/19%3ameeting_abc123\n\nOr call: +1 (555) 123-4567\nConference ID: 987 654 321#"
+    },
+    {
+      "id": "BEN-014",
+      "name": "Product demo with screenshots",
+      "summary": "Product Demo for Stakeholders",
+      "description": "Demo of new dashboard features.\n\nScreenshots and mockups: https://figma.com/file/abc123\nRelease notes: https://confluence.company.com/display/PROD/v2.5\n\nPlease test in staging environment before the demo."
+    },
+    {
+      "id": "BEN-015",
+      "name": "Recurring 1:1 meeting",
+      "summary": "1:1 with Manager",
+      "description": "Weekly 1:1. Topics to discuss:\n- Career development goals\n- Feedback on recent project\n- Upcoming PTO request\n- Training budget for online courses"
+    },
+    {
+      "id": "BEN-016",
+      "name": "Deployment planning",
+      "summary": "Production Deployment Planning",
+      "description": "Deployment plan for v3.2.0:\n\n1. Run database migrations\n2. Deploy backend services\n3. Update load balancer configuration\n4. Run smoke tests\n5. Monitor error rates for 30 minutes\n\nRollback plan documented in runbook."
+    },
+    {
+      "id": "BEN-017",
+      "name": "Workshop with technical content",
+      "summary": "Git Workshop for New Hires",
+      "description": "Workshop covering:\n- git clone, commit, push workflows\n- Branch management strategies\n- Pull request best practices\n- Resolving merge conflicts\n\nBring your laptop with Git installed."
+    },
+    {
+      "id": "BEN-018",
+      "name": "Hackathon event",
+      "summary": "Q1 Hackathon",
+      "description": "Theme: Developer Experience\n\nRules:\n- Teams of 2-4\n- 48 hours to build\n- Must use company APIs\n- Judged on innovation, execution, and impact\n\nPrizes: 1st place - $500 gift card, 2nd - $250, 3rd - $100"
+    },
+    {
+      "id": "BEN-019",
+      "name": "Meeting with URL in description",
+      "summary": "API Integration Review",
+      "description": "Review the API integration with the payments provider.\n\nDocs: https://stripe.com/docs/api\nDashboard: https://dashboard.stripe.com/test/payments\n\nWe need to discuss rate limits and error handling."
+    },
+    {
+      "id": "BEN-020",
+      "name": "Conference travel event",
+      "summary": "KubeCon Attendance",
+      "description": "KubeCon NA 2025\nSalt Lake City, UT\n\nFlight: UA 1234, departing 8:00 AM\nHotel: Hilton Downtown, confirmation #H12345\n\nSessions to attend:\n- Service mesh deep dive\n- Kubernetes security best practices\n- GitOps at scale",
+      "location": "Salt Palace Convention Center, Salt Lake City, UT"
+    }
+  ]
+}
