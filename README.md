@@ -41,7 +41,7 @@ This is an **Indirect Prompt Injection (IPI)** attack. The malicious instruction
 
 ### Why a Chrome Extension Can't Fix This
 
-A browser extension has been proposed as a mitigation. This fails because:
+We initially considered a browser extension as a mitigation. It fails because:
 
 - MCP operates over **stdio**, not HTTP. Calendar data flows directly between the MCP server process and Claude Desktop. There is no browser request to intercept.
 - Even if calendar data were fetched via a browser, the extension would need to understand prompt injection semantics — a fundamentally different problem than blocking malicious URLs or scripts.
